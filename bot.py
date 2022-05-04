@@ -10,17 +10,6 @@ bot = telebot.TeleBot(BOTTOKEN)
 disk = yadisk.YaDisk(DISKTOKEN)
 
 
-@bot.message_handler(commands=['start', 'help'])
-def echo(message):
-    bot.reply_to(message, "Hi! I'm English File Elementary 4e audio bot. Send me the number of audio you need!")
-
-
-@bot.message_handler(content_types=['text', ])
-def main(message):
-    csvlogger(str(essage.chat.id), message.from_user.first_name, message.text)
-    
-
-
 
 def csvlogger(column1: str, column2: str, column3: str):
     columns = [column1, column2, column3]
@@ -28,7 +17,15 @@ def csvlogger(column1: str, column2: str, column3: str):
         f.write(','.join(columns)+'\n')
 
 
+@bot.message_handler(commands=['start', 'help'])
+def echo(message):
+    bot.reply_to(message, "Hi! I'm English File Elementary 4e audio bot. Send me the number of audio you need!")
 
+
+@bot.message_handler(content_types=['text', ])
+def main(message):
+    csvlogger(str(message.chat.id), message.from_user.first_name, message.text)
+    
 
 
 if __name__ == '__main__':
