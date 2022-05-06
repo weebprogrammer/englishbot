@@ -2,3 +2,4 @@ venv/
 log.csv
 __pycache__/
 cache/
+config.py

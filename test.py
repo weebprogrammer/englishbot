@@ -1,4 +1,4 @@
-from bot import csvlogger
+from files import files
 
-csvlogger('amir', 'tagashov', 'kkk')
-
+if '10.03.mp3' in files:
+    print(True)
