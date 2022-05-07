@@ -3,3 +3,4 @@ log.csv
 __pycache__/
 cache/
 config.py
+test.py
